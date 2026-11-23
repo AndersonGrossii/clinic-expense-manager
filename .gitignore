@@ -1,0 +1,44 @@
+# ───────────── Secrets & environment ─────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+credentials*.json
+service-account*.json
+
+# ───────────── Internal agent specification ─────────────
+AGENTS.md
+
+# ───────────── Uploaded clinic documents (private data) ─────────────
+storage/
+uploads/
+
+# ───────────── Database dumps & local data ─────────────
+*.sql.gz
+*.dump
+*.backup
+pgdata/
+backups/
+
+# ───────────── Dependencies & build ─────────────
+node_modules/
+dist/
+coverage/
+.nyc_output/
+
+# ───────────── Logs ─────────────
+logs/
+*.log
+npm-debug.log*
+
+# ───────────── OS / editor ─────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

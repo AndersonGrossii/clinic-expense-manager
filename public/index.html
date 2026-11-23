@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vides Finanzas — Gestión Financiera Multi-Clínica</title>
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+  <div class="app">
+    <aside id="sidebar" class="sidebar" aria-label="Navegación principal">
+      <div class="brand">
+        <div class="brand-logo">CF</div>
+        <div>
+          <strong>Vides Finanzas</strong>
+          <small>Control de clínicas</small>
+        </div>
+      </div>
+
+      <div class="nav-section">Gestión</div>
+      <nav class="nav" id="main-nav">
+        <a href="#dashboard" data-route="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+          <span>Panel principal</span>
+        </a>
+        <a href="#folders" data-route="folders">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
+          <span>Carpetas y facturas</span>
+        </a>
+        <a href="#search" data-route="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span>Buscar documentos</span>
+        </a>
+      </nav>
+
+      <div class="nav-section">Personal y análisis</div>
+      <nav class="nav" id="secondary-nav">
+        <a href="#nominas" data-route="nominas">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Nóminas</span>
+        </a>
+        <a href="#reports" data-route="reports">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          <span>Informes</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user" id="user-name">Cargando…</div>
+        <div class="muted" id="user-email"></div>
+        <button id="logout-btn" type="button" class="btn btn-ghost btn-sm mt">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          <span>Cerrar sesión</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <div class="row">
+          <button id="menu-toggle" type="button" class="btn btn-icon menu-toggle" aria-label="Abrir menú">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div>
+            <h1 id="page-title">Panel principal</h1>
+            <div class="subtitle" id="page-subtitle">Resumen financiero de la clínica</div>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <div class="clinic-switcher" id="clinic-switcher">
+            <button id="clinic-switcher-btn" type="button" class="clinic-btn" aria-haspopup="true" aria-expanded="false">
+              <span class="clinic-avatar" id="active-clinic-avatar">C</span>
+              <span class="name" id="active-clinic-name">Cargando…</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div id="clinic-dropdown" class="dropdown" hidden role="menu"></div>
+          </div>
+
+          <button id="quick-upload-btn" type="button" class="btn btn-primary no-print">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <span>Subir documento</span>
+          </button>
+        </div>
+      </header>
+
+      <main id="view" class="content" tabindex="-1">
+        <div class="spinner" aria-label="Cargando"></div>
+      </main>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

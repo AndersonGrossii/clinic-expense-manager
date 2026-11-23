@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión — ClínicaFin</title>
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+  <div class="login-page">
+    <section class="login-hero">
+      <div class="brand">
+        <div class="brand-logo">CF</div>
+        <div>
+          <strong>Vides Finanzas</strong>
+          <small>Gestión multi-clínica</small>
+        </div>
+      </div>
+
+      <div>
+        <h1>Control financiero, facturas y nóminas aislado por clínica.</h1>
+        <p>Centraliza recibos, documentos PDF, gastos por categoría e impuestos (IVA) de cada clínica en espacios completamente independientes.</p>
+        <ul>
+          <li>Aislamiento estricto entre clínicas en base de datos y archivos</li>
+          <li>Carpetas personalizables: Agua, Compras, Nóminas, Gastos Generales</li>
+          <li>Gráficos interactivos con acceso directo al detalle</li>
+          <li>Informes de IVA trimestral, gastos y costes salariales</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <main class="login-form-wrap">
+      <div class="login-card card card-pad">
+        <h2>Acceso privado</h2>
+        <p class="sub">Introduce tus credenciales para gestionar tus clínicas.</p>
+
+        <form id="login-form" novalidate>
+          <div id="login-error" class="form-error" hidden role="alert"></div>
+
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" class="input" autocomplete="email" required placeholder="tu@clinica.com">
+          </div>
+
+          <div class="field">
+            <label for="password">Contraseña</label>
+            <input id="password" name="password" type="password" class="input" autocomplete="current-password" required placeholder="••••••••">
+          </div>
+
+          <button id="login-btn" type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/js/login.js"></script>
+</body>
+</html>
