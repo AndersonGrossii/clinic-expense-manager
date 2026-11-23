@@ -13,9 +13,12 @@ function attachTooltip(container) {
       const box = container.getBoundingClientRect();
       const rect = targetEl.getBoundingClientRect();
       tip.innerHTML = html;
-      tip.style.left = `${rect.left - box.left + rect.width / 2}px`;
-      tip.style.top = `${Math.max(8, rect.top - box.top)}px`;
       tip.hidden = false;
+      const halfW = tip.offsetWidth / 2;
+      const rawLeft = rect.left - box.left + rect.width / 2;
+      const clampedLeft = Math.min(Math.max(rawLeft, halfW + 8), Math.max(halfW + 8, box.width - halfW - 8));
+      tip.style.left = `${clampedLeft}px`;
+      tip.style.top = `${Math.max(8, rect.top - box.top)}px`;
     },
     hide() {
       tip.hidden = true;
@@ -90,10 +93,12 @@ export function renderMonthlyChart(container, monthly, { onSelectMonth } = {}) {
 
   container.innerHTML = `
     <div class="chart">
-      <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">
-        <g class="axis">${gridLines}</g>
-        ${bars}
-      </svg>
+      <div class="chart-scroll">
+        <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">
+          <g class="axis">${gridLines}</g>
+          ${bars}
+        </svg>
+      </div>
       <div class="chart-legend">
         <span class="item"><span class="sw" data-sw="#2563EB"></span>Importe base / neto</span>
         <span class="item"><span class="sw" data-sw="#0EA5E9"></span>IVA pagado</span>

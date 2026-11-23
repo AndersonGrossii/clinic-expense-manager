@@ -28,6 +28,16 @@ const dropdownEl = document.getElementById('clinic-dropdown');
 const avatarEl = document.getElementById('active-clinic-avatar');
 const clinicNameEl = document.getElementById('active-clinic-name');
 const sidebarEl = document.getElementById('sidebar');
+const sidebarBackdropEl = document.getElementById('sidebar-backdrop');
+const sidebarCloseBtn = document.getElementById('sidebar-close');
+const menuToggleBtn = document.getElementById('menu-toggle');
+
+function setSidebarOpen(open) {
+  sidebarEl.classList.toggle('open', open);
+  sidebarBackdropEl.hidden = !open;
+  document.body.classList.toggle('drawer-open', open);
+  menuToggleBtn.setAttribute('aria-expanded', String(open));
+}
 
 function renderClinicSwitcher() {
   const active = getActiveClinic();
@@ -70,6 +80,7 @@ function renderClinicSwitcher() {
 
   dropdownEl.querySelector('#edit-active-clinic')?.addEventListener('click', () => {
     dropdownEl.hidden = true;
+    switcherBtn.setAttribute('aria-expanded', 'false');
     openClinicModal({
       clinic: getActiveClinic(),
       onSaved: async (saved) => {
@@ -83,6 +94,7 @@ function renderClinicSwitcher() {
 
   dropdownEl.querySelector('#create-new-clinic')?.addEventListener('click', () => {
     dropdownEl.hidden = true;
+    switcherBtn.setAttribute('aria-expanded', 'false');
     openClinicModal({
       onSaved: async (saved) => {
         await refreshClinics();
@@ -103,10 +115,10 @@ async function renderCurrentRoute() {
   titleEl.textContent = route.title;
   subtitleEl.textContent = route.subtitle;
 
-  for (const link of document.querySelectorAll('.nav a[data-route]')) {
+  for (const link of document.querySelectorAll('[data-route]')) {
     link.classList.toggle('active', link.dataset.route === routeKey);
   }
-  sidebarEl.classList.remove('open');
+  setSidebarOpen(false);
 
   if (!state.clinics.length) {
     viewEl.innerHTML = `
@@ -187,9 +199,17 @@ async function init() {
     });
   });
 
-  // Mobile menu toggle
-  document.getElementById('menu-toggle').addEventListener('click', () => {
-    sidebarEl.classList.toggle('open');
+  // Mobile / tablet drawer toggle
+  menuToggleBtn.addEventListener('click', () => {
+    setSidebarOpen(!sidebarEl.classList.contains('open'));
+  });
+  sidebarCloseBtn.addEventListener('click', () => setSidebarOpen(false));
+  sidebarBackdropEl.addEventListener('click', () => setSidebarOpen(false));
+  for (const link of sidebarEl.querySelectorAll('.nav a')) {
+    link.addEventListener('click', () => setSidebarOpen(false));
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sidebarEl.classList.contains('open')) setSidebarOpen(false);
   });
 
   // Logout

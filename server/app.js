@@ -42,7 +42,14 @@ export function createApp() {
   app.use('/api', notFoundHandler);
 
   // Static frontend (no uploaded files live here)
-  app.use(express.static(PUBLIC_DIR, { index: 'index.html', extensions: ['html'], maxAge: config.isProduction ? '1h' : 0 }));
+  app.use(express.static(PUBLIC_DIR, {
+    index: 'index.html',
+    extensions: ['html'],
+    etag: true,
+    lastModified: true,
+    maxAge: 0,
+    setHeaders: (res) => res.setHeader('Cache-Control', 'no-cache'),
+  }));
   app.get('*', (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'index.html')));
 
   app.use(errorHandler);

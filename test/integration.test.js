@@ -164,7 +164,7 @@ test('integration: full auth, clinic isolation, upload security, CRUD & accounta
     // 6. Workers & Nóminas + Accountant rules
     const wk = await apiFetch('/workers', { method: 'POST', clinicId: clinicA.id, body: { full_name: 'Ana Ruiz' } });
     assert.equal(wk.status, 201);
-    assert.equal((await apiFetch(`/workers/${wk.data.id}`, { method: 'PATCH', clinicId: clinicB.id, body: { full_name: 'X' } })).status, 404);
+    assert.equal((await apiFetch(`/workers/${wk.data.id}`, { method: 'PATCH', clinicId: clinicB.id, body: { full_name: 'Ana Hack' } })).status, 404);
 
     const nomFd = new FormData();
     nomFd.append('file', new Blob([PDF_BYTES], { type: 'application/pdf' }), 'nomina-mayo.pdf');

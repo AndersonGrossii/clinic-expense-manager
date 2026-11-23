@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Vides Finanzas — Gestión Financiera Multi-Clínica</title>
-  <link rel="stylesheet" href="/css/variables.css">
-  <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/variables.css?v=2">
+  <link rel="stylesheet" href="/css/layout.css?v=2">
+  <link rel="stylesheet" href="/css/components.css?v=2">
 </head>
 <body>
   <div class="app">
@@ -17,6 +17,9 @@
           <strong>Vides Finanzas</strong>
           <small>Control de clínicas</small>
         </div>
+        <button id="sidebar-close" type="button" class="btn btn-ghost btn-icon sidebar-close" aria-label="Cerrar menú">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
       </div>
 
       <div class="nav-section">Gestión</div>
@@ -56,14 +59,15 @@
         </button>
       </div>
     </aside>
+    <div id="sidebar-backdrop" class="sidebar-backdrop" hidden></div>
 
     <div class="main">
       <header class="topbar">
-        <div class="row">
-          <button id="menu-toggle" type="button" class="btn btn-icon menu-toggle" aria-label="Abrir menú">
+        <div class="row topbar-left">
+          <button id="menu-toggle" type="button" class="btn btn-icon menu-toggle" aria-label="Abrir menú" aria-controls="sidebar" aria-expanded="false">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
-          <div>
+          <div class="topbar-title">
             <h1 id="page-title">Panel principal</h1>
             <div class="subtitle" id="page-subtitle">Resumen financiero de la clínica</div>
           </div>
@@ -79,9 +83,9 @@
             <div id="clinic-dropdown" class="dropdown" hidden role="menu"></div>
           </div>
 
-          <button id="quick-upload-btn" type="button" class="btn btn-primary no-print">
+          <button id="quick-upload-btn" type="button" class="btn btn-primary no-print" aria-label="Subir documento" title="Subir documento">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            <span>Subir documento</span>
+            <span class="btn-label">Subir documento</span>
           </button>
         </div>
       </header>
@@ -90,11 +94,34 @@
         <div class="spinner" aria-label="Cargando"></div>
       </main>
     </div>
+
+    <nav id="bottom-nav" class="bottom-nav no-print" aria-label="Navegación rápida">
+      <a href="#dashboard" data-route="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+        <span>Panel</span>
+      </a>
+      <a href="#folders" data-route="folders">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
+        <span>Carpetas</span>
+      </a>
+      <a href="#search" data-route="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span>Buscar</span>
+      </a>
+      <a href="#nominas" data-route="nominas">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span>Nóminas</span>
+      </a>
+      <a href="#reports" data-route="reports">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        <span>Informes</span>
+      </a>
+    </nav>
   </div>
 
   <div id="modal-root"></div>
   <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
 
-  <script type="module" src="/js/app.js"></script>
+  <script type="module" src="/js/app.js?v=2"></script>
 </body>
 </html>
