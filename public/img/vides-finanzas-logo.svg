@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 140" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="vfCyan" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00bcd4" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left Emblem: Financial Growth & Prosperity ribbon embracing signature Vides 'V' -->
+  <g transform="translate(10, 8)">
+    <!-- 3 Subtle Ascending Financial Growth Bars -->
+    <rect x="38" y="74" width="7" height="24" rx="3.5" fill="url(#vfCyan)" opacity="0.32" />
+    <rect x="50" y="61" width="7" height="37" rx="3.5" fill="url(#vfCyan)" opacity="0.55" />
+    <rect x="62" y="48" width="7" height="50" rx="3.5" fill="url(#vfCyan)" opacity="0.82" />
+
+    <!-- Upward Financial Growth Trendline (reinterpreting the fluid dental tooth ribbon as economic growth) -->
+    <path d="M 20 102 C 12 75 16 38 36 24 C 50 14 68 16 78 26 C 88 36 98 38 112 24"
+          stroke="url(#vfCyan)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Growth Trend Arrowhead -->
+    <path d="M 98 20 L 115 22 L 113 39"
+          stroke="url(#vfCyan)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Signature Vides Calligraphic 'V' -->
+    <path d="M 44 65 C 42 59 46 54 53 55 C 61 56 65 64 65 73 C 65 86 62 100 72 114 C 74 116 76 116 77 114 C 83 92 95 56 113 25 C 116 20 122 19 119 26 C 103 61 88 103 80 122 C 77 127 72 127 69 122 C 57 103 52 85 44 65 Z"
+          fill="#0b1220" />
+  </g>
+
+  <!-- Typography -->
+  <!-- IDES: bold, clean geometric uppercase -->
+  <text x="148" y="68" font-family="'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="48" font-weight="900" fill="#0b1220" letter-spacing="0.06em">IDES</text>
+  
+  <!-- FINANZAS: widely tracked, perfectly balanced underneath IDES -->
+  <text x="150" y="104" font-family="'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="21" font-weight="800" fill="#0b1220" letter-spacing="0.28em">FINANZAS</text>
+
+  <!-- Financial accent dot -->
+  <circle cx="430" cy="98" r="3.5" fill="#00bcd4" />
+</svg>

@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Iniciar sesión — ClínicaFin</title>
+  <title>Iniciar sesión — Vides Finanzas</title>
+
+  <!-- PWA & iOS Safari tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Vides Finanzas">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+  <link rel="manifest" href="/manifest.json">
+
   <link rel="stylesheet" href="/css/variables.css?v=2">
   <link rel="stylesheet" href="/css/layout.css?v=2">
   <link rel="stylesheet" href="/css/components.css?v=2">
@@ -12,7 +22,22 @@
   <div class="login-page">
     <section class="login-hero">
       <div class="brand">
-        <div class="brand-logo">CF</div>
+        <div class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 140 140" width="24" height="24" fill="none">
+            <defs>
+              <linearGradient id="loginCyan" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#00bcd4"/>
+                <stop offset="100%" stop-color="#38bdf8"/>
+              </linearGradient>
+            </defs>
+            <rect x="36" y="72" width="7" height="24" rx="3.5" fill="url(#loginCyan)" opacity="0.4"/>
+            <rect x="48" y="59" width="7" height="37" rx="3.5" fill="url(#loginCyan)" opacity="0.65"/>
+            <rect x="60" y="46" width="7" height="50" rx="3.5" fill="url(#loginCyan)" opacity="0.9"/>
+            <path d="M 18 100 C 10 73 14 36 34 22 C 48 12 66 14 76 24 C 86 34 96 36 110 22" stroke="url(#loginCyan)" stroke-width="7" stroke-linecap="round"/>
+            <path d="M 96 18 L 113 20 L 111 37" stroke="url(#loginCyan)" stroke-width="6" stroke-linecap="round"/>
+            <path d="M 42 63 C 40 57 44 52 51 53 C 59 54 63 62 63 71 C 63 84 60 98 70 112 C 72 114 74 114 75 112 C 81 90 93 54 111 23 C 114 18 120 17 117 24 C 101 59 86 101 78 120 C 75 125 70 125 67 120 C 55 101 50 83 42 63 Z" fill="#ffffff"/>
+          </svg>
+        </div>
         <div>
           <strong>Vides Finanzas</strong>
           <small>Gestión multi-clínica</small>
@@ -35,7 +60,22 @@
     <main class="login-form-wrap">
       <div class="login-card card card-pad">
         <div class="login-mobile-brand">
-          <div class="brand-logo">CF</div>
+          <div class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 140 140" width="24" height="24" fill="none">
+            <defs>
+              <linearGradient id="loginCyan" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#00bcd4"/>
+                <stop offset="100%" stop-color="#38bdf8"/>
+              </linearGradient>
+            </defs>
+            <rect x="36" y="72" width="7" height="24" rx="3.5" fill="url(#loginCyan)" opacity="0.4"/>
+            <rect x="48" y="59" width="7" height="37" rx="3.5" fill="url(#loginCyan)" opacity="0.65"/>
+            <rect x="60" y="46" width="7" height="50" rx="3.5" fill="url(#loginCyan)" opacity="0.9"/>
+            <path d="M 18 100 C 10 73 14 36 34 22 C 48 12 66 14 76 24 C 86 34 96 36 110 22" stroke="url(#loginCyan)" stroke-width="7" stroke-linecap="round"/>
+            <path d="M 96 18 L 113 20 L 111 37" stroke="url(#loginCyan)" stroke-width="6" stroke-linecap="round"/>
+            <path d="M 42 63 C 40 57 44 52 51 53 C 59 54 63 62 63 71 C 63 84 60 98 70 112 C 72 114 74 114 75 112 C 81 90 93 54 111 23 C 114 18 120 17 117 24 C 101 59 86 101 78 120 C 75 125 70 125 67 120 C 55 101 50 83 42 63 Z" fill="#ffffff"/>
+          </svg>
+        </div>
           <div>
             <strong>Vides Finanzas</strong>
             <small>Gestión multi-clínica</small>
